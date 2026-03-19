@@ -30,3 +30,30 @@ This test plan covers the current business logic and observable implementation b
 - These test cases intentionally capture both business expectations and current implementation behavior.
 - Test cases `TP-014`, `TP-015`, and `TP-020` are especially important because they document current technical limitations that may change in the future Node.js design.
 - The `Actual Result`, `Status (Pass/Fail)`, and `Comments` columns are left blank so business stakeholders and testers can complete them during validation sessions.
+
+## Automation Traceability
+
+The following table maps each business test case in this plan to its automated implementation in [src/accounting/test/accounting.test.js](src/accounting/test/accounting.test.js).
+
+| Test Case ID | Automated Test Name |
+| --- | --- |
+| TP-001 | `TP-001: application starts and displays main menu` |
+| TP-002 | `TP-002: fresh run starts with initial balance 1000.00` |
+| TP-003 | `TP-003: selecting option 4 exits the app` |
+| TP-004 | `TP-004: invalid menu selections are rejected and return to menu` |
+| TP-005 | `TP-005: balance inquiry does not modify stored balance` |
+| TP-006 | `TP-006: credit transaction increases balance` |
+| TP-007 | `TP-007: multiple credit transactions are cumulative` |
+| TP-008 | `TP-008: debit transaction reduces balance when funds are available` |
+| TP-009 | `TP-009: multiple debit transactions are cumulative with sufficient funds` |
+| TP-010 | `TP-010: debit equal to full available balance is allowed` |
+| TP-011 | `TP-011: insufficient debit is rejected and balance remains unchanged` |
+| TP-012 | `TP-012: failed debit does not affect subsequent successful operation` |
+| TP-013 | `TP-013: balance changes persist across menu actions in one session` |
+| TP-014 | `TP-014: balance is reset after application restart` |
+| TP-015 | `TP-015: app manages a single account only` |
+| TP-016 | `TP-016: credit flow displays updated balance immediately` |
+| TP-017 | `TP-017: debit flow displays updated balance immediately` |
+| TP-018 | `TP-018: app returns to menu after inquiry and transaction flows` |
+| TP-019 | `TP-019: transaction ordering affects final balance` |
+| TP-020 | `TP-020: failed debit followed by restart leaves no residual state` |
