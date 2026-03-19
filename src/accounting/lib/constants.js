@@ -1,0 +1,26 @@
+const INITIAL_BALANCE = 1000.0;
+
+const MENU_CHOICES = {
+  VIEW_BALANCE: '1',
+  CREDIT_ACCOUNT: '2',
+  DEBIT_ACCOUNT: '3',
+  EXIT: '4',
+};
+
+const OPERATION_TYPES = {
+  TOTAL: 'TOTAL ',
+  CREDIT: 'CREDIT',
+  DEBIT: 'DEBIT ',
+};
+
+const DATA_ACTIONS = {
+  READ: 'READ',
+  WRITE: 'WRITE',
+};
+
+module.exports = {
+  INITIAL_BALANCE,
+  MENU_CHOICES,
+  OPERATION_TYPES,
+  DATA_ACTIONS,
+};
