@@ -1,8 +1,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 
-const { runApp } = require('../lib/app');
-const { createDataProgram } = require('../lib/dataProgram');
+const { runApp, createDataProgram } = require('../index');
 
 function createMockIO(answers = []) {
   const queue = [...answers];

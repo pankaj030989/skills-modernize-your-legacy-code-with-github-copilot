@@ -4,17 +4,18 @@ This folder contains the Node.js modernization of the legacy COBOL account manag
 
 ## COBOL to Node.js Mapping
 
-| Legacy COBOL Program | Responsibility | Node.js Module |
+The modernization is consolidated into a single implementation file:
+
+| Legacy COBOL Program | Responsibility | Node.js Implementation |
 | --- | --- | --- |
-| `src/cobol/main.cob` | Menu loop, user choice routing, exit handling | `lib/app.js` |
-| `src/cobol/operations.cob` | Business operations (`TOTAL `, `CREDIT`, `DEBIT `) | `lib/operations.js` |
-| `src/cobol/data.cob` | In-memory balance read/write storage | `lib/dataProgram.js` |
+| `src/cobol/main.cob` | Menu loop, user choice routing, exit handling | `index.js` (`runApp`) |
+| `src/cobol/operations.cob` | Business operations (`TOTAL `, `CREDIT`, `DEBIT `) | `index.js` (`operationsProgram`) |
+| `src/cobol/data.cob` | In-memory balance read/write storage | `index.js` (`createDataProgram`) |
 
-Supporting files:
+Supporting behavior in `index.js`:
 
-- `index.js`: application entrypoint
-- `lib/constants.js`: operation and menu constants preserving COBOL operation semantics
-- `lib/io.js`: console input/output adapter for interactive and scripted execution
+- `createConsoleIO`: console input/output adapter
+- module exports for reuse in tests
 
 ## Preserved Business Behavior
 
@@ -46,5 +47,4 @@ npm test
 
 Test files:
 
-- `test/operations.unit.test.js`
-- `test/app.integration.test.js`
+- `test/accounting.test.js`
